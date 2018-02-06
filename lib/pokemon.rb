@@ -17,7 +17,7 @@ class Pokemon
   def self.find(id, db)
     spokemon = db.execute("SELECT * FROM pokemon WHERE id=?", id).flatten
     # binding.pry
-    self.new(id: spokemon[0], name: spokemon[1], type: spokemon[2], db: db)
+    self.new(id: spokemon[0], name: spokemon[1], type: spokemon[2], hp: spokemon[3], db: db)
   end
 
   def alter_hp(hp, db)
