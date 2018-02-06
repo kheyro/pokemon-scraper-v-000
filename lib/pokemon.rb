@@ -18,4 +18,8 @@ class Pokemon
     # binding.pry
     self.new(id: spokemon[0], name: spokemon[1], type: spokemon[2], db: db)
   end
+
+  def self.alter(hp, db)
+    db.execute("UPDATE pokemon SET hp=?", hp)
+  end
 end
